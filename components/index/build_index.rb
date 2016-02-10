@@ -2,15 +2,20 @@ class IndexComponent::BuildIndex
   include Operation
 
   def call
-    dog_info = WineComponent::WineIndexApi.get(
+    doggy_info = DoggyComponent::IndexApi.get(
       url: 'https://pet-store-123456.herokuapp.com',
       urn_path: '/doggy/index'
     )
 
+    # rentals_info = RentalsComponent::IndexApi.get(
+    #   url: 'https://pet-store-123456.herokuapp.com',
+    #   urn_path: '/rentals/index'
+    # )
+
     {
       requested_at: Time.now,
       concepts: {
-        "DogComponent::DogApi" => dog_info
+        "DoggyComponent::DogApi" => doggy_info
       }
     }
   end

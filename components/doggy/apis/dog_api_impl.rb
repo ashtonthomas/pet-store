@@ -12,5 +12,12 @@ module DoggyComponent
       end
     end
 
+    namespace :random do
+      get 'random_dog' do
+        dog = Dog.first
+        dog.extend(DogRepresenter)
+      end
+    end
+
   end
 end

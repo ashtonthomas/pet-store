@@ -4,7 +4,7 @@ def app
   ApplicationApi
 end
 
-describe DoggyComponent::DogApiImpl do
+describe RentalsComponent::PetRentalApiImpl do
   include Rack::Test::Methods
 
   before do
@@ -14,15 +14,7 @@ describe DoggyComponent::DogApiImpl do
 
   describe 'GET' do
     it 'does something' do
-      get "/doggy/dogs/#{@dog.id}"
-
-      expect(response_body).to eq( {id: @dog.id}.merge(@attrs).to_json)
-    end
-  end
-
-  describe 'get /random_dog' do
-    it 'does something' do
-      get "/doggy/dogs/random/random_dog"
+      get "/rentals/pet-rental"
 
       expect(response_body).to eq( {id: @dog.id}.merge(@attrs).to_json)
     end

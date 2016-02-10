@@ -10,6 +10,8 @@ class ApplicationApi < Grape::API
   # Dynamically generate the component index based on the `rake routes`
   mount DoggyComponent::IndexApiImpl => '/doggy/index'
 
+  mount RentalsComponent::PetRentalApiImpl => '/rentals/pet-rental'
+
   add_swagger_documentation
 end
 

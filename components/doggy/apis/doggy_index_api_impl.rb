@@ -5,20 +5,35 @@ module DoggyComponent
     get '/' do
       # This may need to be a list of all the concepts in this component
       {
-        app_name: "fubar123", #app name may no longer be needed if we use get_const
-        url_template: "https://pet-store-1231231231.herokuapp.com",
-        urn_path_template: "/doggy/dogs/:id",
-        url_variables: {
-          id: "the ID of the dog"
+        get: {
+          url_template: "https://pet-store-1231231231.herokuapp.com",
+          urn_path_template: "/doggy/dogs/:id",
+          url_variables: {
+            id: "the ID of the dog"
+          },
+          formats: [
+            :xml,
+            :json,
+            :binary,
+            :txt
+          ],
+          available_methods: [:get, :put, :post, :delete]
         },
-        formats: [
-          :xml,
-          :json,
-          :binary,
-          :txt
-        ],
-        available_methods: [:get, :put, :post, :delete],
-      }.to_json
+
+        random_dog: {
+          url_template: "https://pet-store-1231231231.herokuapp.com",
+          urn_path_template: "/doggy/dogs/random/random_dog",
+          url_variables: {},
+          formats: [
+            :xml,
+            :json,
+            :binary,
+            :txt
+          ],
+          available_methods: [:get]
+        }
+
+      }
     end
   end
 end
