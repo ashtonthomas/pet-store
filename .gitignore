@@ -1,0 +1,11 @@
+.DS_Store
+.env
+.vagrant
+!.env.test
+!log/.keep
+log/*
+tmp/*
+coverage
+!.keep
+.ruby-gemset
+.idea
